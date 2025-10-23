@@ -1,0 +1,12 @@
+
+# Ignore sensitive files
+devices.yml
+.env
+
+# Python
+__pycache__/
+*.pyc
+
+# Backups & logs
+*.log
+backups/
