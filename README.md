@@ -1,6 +1,6 @@
 # **NetBot — Python Network Automation Bot**
 
-![CLI demo](assets/runner_terminal.png)
+![CLI demo](runner_terminal.png)
 
 ## ** Project Origin**
 **NetBot** was born from the need to **automate repetitive network tasks** in real-world labs and production-like environments.  
