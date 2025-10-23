@@ -1,50 +1,28 @@
+# NetBot 🛠️ — Python Network Automation Bot
 
-# NetBot - Network Automation Bot
+**NetBot** is a compact, reliable Python tool for automating common network tasks on routers and switches.
+It helps you backup device configs, run show commands across devices, and push Jinja2-based templates — fast.
 
-## 📌 Overview
-NetBot is a Python-based automation tool designed to manage network devices such as routers and switches. 
-It uses SSH-based automation to collect configurations, push templates, and execute show commands across multiple devices.  
-This project is modular, scalable, and perfect for network engineers who want to automate repetitive tasks.
+![CLI demo](assets/cli_example.png)
 
-## ✅ Features
-- Connect to network devices using SSH (Netmiko)
-- Backup running-configuration from devices
-- Execute show commands on multiple devices
-- Push configuration using Jinja2 templates
-- Supports YAML-based device inventory
-- Thread-based parallel execution
+## Quick Highlights
+- SSH automation with **Netmiko**
+- Multi-vendor support ideas with **NAPALM**
+- Templating via **Jinja2**
+- Simple CLI built with **Typer**
+- YAML inventory for devices
 
-## 📂 Project Structure
-```
-netbot/
-├─ netbot/                # Core Python source code
-│  ├─ connection.py       # Handles SSH connections using Netmiko
-│  ├─ tasks.py            # Backup and show command execution
-│  ├─ playbook.py         # Jinja2 templating and config push
-│  └─ __init__.py
-├─ templates/             # Configuration templates (Jinja2)
-│  └─ add_vlan.j2
-├─ examples/              # Sample files (safe for GitHub)
-│  └─ devices.example.yml
-├─ requirements.txt
-├─ .gitignore
-├─ README.md
-└─ LICENSE (optional)
-```
-
-## 🚀 How to Run
+## Quick Start
 ```bash
 pip install -r requirements.txt
-python -m netbot.cli
+cp examples/devices.example.yml devices.yml
+# edit devices.yml with your lab credentials (do NOT use production creds in GitHub)
+python -m netbot.cli backup_all
+python -m netbot.cli show sample-router "show ip interface brief"
 ```
 
-## ⚠️ Security Note
-Do NOT upload real device credentials to GitHub.  
-Use `devices.example.yml` instead of `devices.yml`, and add the real one to `.gitignore`.
+## Security
+**Do not** commit real device credentials. Keep `devices.yml` in `.gitignore` and use `examples/devices.example.yml` for public repos.
 
-## ⭐ Future Improvements
-- REST API (FastAPI)
-- Web dashboard
-- Config versioning and diff
-- Scheduled backups
-
+---
+Powered by Netmiko, Jinja2 and Python. Fork it, improve it, automate your network. 🚀
